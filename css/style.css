@@ -1,0 +1,379 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  color: #e5e5e5;
+  background-size: contain;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  min-width: 200px;
+  background-image: linear-gradient(
+    rgba(255, 0, 0, 1),
+    rgba(255, 255, 255, 1),
+    rgba(0, 128, 0, 1)
+  );
+}
+
+video.main-video {
+  width: 100%;
+}
+
+nav a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  padding: 1.25rem 0.5rem;
+  white-space: nowrap;
+  transition: color 1s;
+}
+
+nav ul li:first-child a {
+  color: green;
+  font-weight: bold;
+  cursor: default;
+}
+
+nav ul li:not(:first-child) a:hover {
+  color: green;
+  opacity: 0.8;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  background-image: linear-gradient(
+    rgba(255, 0, 0, 0.5),
+    rgba(255, 255, 255, 0.5),
+    rgba(0, 128, 0, 0.2)
+  );
+  width: 100%;
+  transition: background-color 0.5s;
+}
+
+nav .menu {
+  display: flex;
+}
+
+nav .menu {
+  display: flex;
+  align-items: center;
+  margin: 0.2rem;
+}
+
+nav .menu-right {
+  display: flex;
+  align-items: center;
+  margin: 0.2rem;
+}
+
+nav .menu-right:nth-child(2) {
+  color: darkred;
+}
+
+nav:hover {
+  background-color: black;
+}
+
+nav img#logo {
+  width: 8rem;
+  height: 6rem;
+  margin: 0rem 0rem;
+}
+
+nav .browse {
+  display: flex;
+  position: relative;
+}
+
+nav .browse img {
+  display: none;
+}
+
+header {
+  position: relative;
+}
+
+header .buttons {
+  position: absolute;
+  top: 8rem;
+  margin: 2rem;
+  width: 60vw;
+  font-size: 0, 2rem;
+}
+
+header .buttons button {
+  padding: 0.5rem 2rem;
+  margin: 1rem 0.5 0 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 1rem;
+  box-shadow: none;
+  border-style: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+header .playinfo {
+  display: flex;
+}
+
+button img {
+  display: block;
+  width: 3rem;
+}
+
+button:nth-child(2) {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: white;
+}
+button:hover {
+  opacity: 0.8;
+}
+
+button:active {
+  outline: 5px double white;
+}
+
+main {
+  position: relative;
+  top: -10rem;
+  margin-left: 2rem;
+}
+
+main .row {
+  width: 100%;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+main h2 {
+  margin: 0 1rem;
+}
+
+main .films {
+  display: flex;
+  overflow-x: scroll;
+  padding: 1rem;
+  align-items: center;
+  scroll-behavior: smooth;
+}
+
+main .films::-webkit-scrollbar {
+  display: none;
+}
+
+main .films img {
+  max-width: 14vw;
+  margin-right: 0.75rem;
+  border-radius: 0.3rem;
+  /* height:150px; */
+  transition: 0.5s;
+}
+
+main .first-row .films img {
+  max-width: 50vw;
+}
+
+main .films img:hover {
+  transform: scale(1.03);
+}
+
+footer {
+  color: rgb(135, 255, 219);
+  display: flex;
+  justify-content: center;
+}
+
+footer .col,
+footer p {
+  margin: 1rem;
+}
+
+main .first-row .forward{
+  height: 4vw;
+  opacity: .9;
+  position: absolute;
+  left: 85vw;
+  z-index: 1;
+  transition: transform 0.5s;
+}
+
+main .first-row .backward{
+  height: 4vw;
+  opacity: .9;
+  position: absolute;
+  left: 2vw;
+  z-index: 1;
+  transition: transform 0.5s;
+}
+
+main .films .backward:hover{
+  transform: scale(2);
+}
+
+main .films .forward:hover{
+  transform: scale(2);
+}
+
+.preview{
+  position: absolute;
+  opacity: 0;
+  z-index: 1;
+  top:0;
+  width: 25vw;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, .5);
+  background-color: black;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: opacity .5s, tranform .5s;
+}
+
+.sample:hover > .preview{
+  opacity: 1;
+  transform: scale(1.5);
+}
+
+.preview h2, .preview p{
+  margin: 1rem;
+}
+
+.preview video{
+  width: 100%;
+}
+
+.preview .icons{
+  display: flex;
+  margin: 1rem;
+  gap: .5rem;
+}
+
+.preview .icons *{
+  width: 2rem;
+  transition: opacity .5s;
+}
+
+.preview .icons *:hover{
+  opacity: .7;
+}
+
+@media (max-width: 900px) and (min-width: 550px) {
+  nav .browse img {
+    display: block;
+  }
+
+  nav .browse ul {
+    display: none;
+  }
+
+  nav .browse::before {
+    content: "Keresés";
+    padding: 1.25rem 0.5rem;
+  }
+  nav .browse:hover ul {
+    display: block;
+    position: absolute;
+    top: 3.5rem;
+    left: -2rem;
+    width: 10rem;
+    text-align: center;
+    background-image: linear-gradient(
+      rgba(255, 0, 0, 0.8),
+      rgba(255, 255, 255, 0.8),
+      rgba(0, 128, 0, 0.8)
+    );
+  }
+}
+
+@media (max-width: 900px) {
+  main {
+    position: static;
+    margin-top: 2rem;
+  }
+
+  header .buttons {
+    width: 90vw;
+    top: 7rem;
+  }
+
+  main .films img {
+    max-width: 30vw;
+  }
+
+.preview{
+  display: none;
+}
+
+}
+
+@media (max-width: 550px) {
+  nav {
+    flex-direction: column-reverse;
+    position: static;
+    top: 0;
+  }
+
+  nav img#logo,
+  .buttons {
+    display: none;
+  }
+
+  nav .browse ul {
+    display: block;
+    text-align: center;
+  }
+
+  nav .browse a {
+    padding: 0.5rem;
+  }
+
+  nav .browse {
+    padding-bottom: 1rem;
+  }
+
+  main {
+    margin-left: 1rem;
+    text-align: center;
+  }
+
+  main .films {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  main .first-row .films img,
+  main .films img {
+    max-width: 75vw;
+    margin-bottom: 3rem;
+  }
+
+footer{
+  flex-direction: column;
+  text-align: center;
+}
+
+.forward{
+  display: none;
+}
+
+.backward{
+  display: none;
+}
+
+}
